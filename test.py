@@ -7,10 +7,11 @@ app = Flask(__name__)
 def showResume():
     return render_template('resume.html')
 
+@app.route('/about')
 def showAbout():
     return render_template('about.html')
 
-
+@app.route('/interests')
 def showInterests():
     return render_template('interests.html')
 
