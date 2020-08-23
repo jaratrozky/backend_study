@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import render_template
-import random.randint as randint
+from random import randint
 app = Flask(__name__)
 
 @app.route('/resume')
