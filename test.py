@@ -1,5 +1,6 @@
 from flask import Flask
 from flask import render_template
+import random.randint as randint
 app = Flask(__name__)
 
 @app.route('/resume')
@@ -15,6 +16,10 @@ def showAbout():
 def showInterests():
     return render_template('interests.html')
 
+@app.route('/test')
+def showTest():
+    price = randint(1, 50)
+	return render_template('random.html', backend_price=price)
 
 if __name__ == "__main__":
     app.run(debug=True, host = '0.0.0.0', port = 1488)
