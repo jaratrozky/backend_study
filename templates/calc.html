@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>calc</title>
+	<style type="text/css">
+		form {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+		}
+	</style>
+</head>
+<body>
+<form method="get" action="/calc">
+	<input type="number" name="a" value='{{a|default(0,true)}}'>x^2</input>
+	<input type='number' name='b' value='{{b|default(0,true)}}'>x</input>
+	<input type='number' name='c' value='{{c|default(0,true)}}'></input>
+	<span>{{x1|default('Нет решения',true)}}</span>
+	<span>{{x2|default('',true)}}</span>
+	<button>kek</button>
+</form>
+</body>
+</html>
