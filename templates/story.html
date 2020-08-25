@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form action="/anec" method="get">
+	<input type="text" name="firstWord">
+	<input type="text" name="secondWord">
+	<button>Начать</button>
+</form>
+<p>{{story|default('Введите слова для начала истории',true)}}</p>
+</body>
+</html>
