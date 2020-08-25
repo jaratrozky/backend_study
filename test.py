@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from flask import Flask, render_template, request
 from random import randint
 import cmath
@@ -51,14 +53,15 @@ def shutka():
         text = f.read()
 
     text_model = markovify.Text(text)
-    fw = request.args.get('firstWord','')
-    sw = request.args.get('secondWord','')
-    try:
-        story = text_model.make_sentence(init_state=(fw,sw))
-    # return text_model.make_sentence()
-    except:
-        story='Что-то пошло не так. Попробуйте ввести другие стартовые слова.'
-    return render_template('story.html',firstWord=fw,secondWord=sw,story=story)
+    fw = request.args.get('firstWord','Пришёл')
+    sw = request.args.get('secondWord','мужик')
+    return text_model.make_sentence()
+    # try:
+    #     story = text_model.make_sentence(init_state=(fw,sw))
+    # # return text_model.make_sentence()
+    # except:
+    #     story='Что-то пошло не так. Попробуйте ввести другие стартовые слова.'
+    # return render_template('story.html',firstWord=fw,secondWord=sw,story=story)
 
 
 if __name__ == "__main__":
